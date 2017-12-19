@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo V-FOR</title>
+</head>
+<body>
+	<div id="vm">
+		<ul>
+			<li v-for="(pais, index) in paises">
+				{{ index }} - {{ pais.nombre }}
+			</li>
+		</ul>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="vue.js"></script>
+</body>
+</html>

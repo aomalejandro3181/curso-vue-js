@@ -79,10 +79,88 @@
 	}	
 })*/
 // FIN ENLACE DE DATOS DOBLES /////
-new Vue({
+//V-BIND Y CONDICIONAL IF /////////
+/*new Vue({
 	el: "#vm",
 	data: {
 		imagen: 'http://lorempixel.com/400/200/',
 		mostrar: false
 	}
+})*/
+//FIN V-BIND Y CONDICIONAL IF /////////	
+//EJEMPLO V-FOR ///////
+/*new Vue({
+	el: "#vm",
+	data: {
+		paises: [
+			{nombre: "Mexico"},{nombre: "Venezuela"},
+			{nombre: "Colombia"}
+		]
+	}
+})*/
+//FIN EJEMPLO V-FOR///////
+//EJEMPLO V-FOR CON OBJETO///////
+/*new Vue({
+	el: "#vm",
+	data : {
+		empleado: {
+			nombre: 'Alejandro',
+			edad: '30',
+			nacionalidad: 'Venezolana',
+			profecsion: 'Programador'
+		}
+	}
+})*/
+//FIN EJEMPLO V-FOR CON OBJETO///////
+//EJEMPLO EVENTOS///////////
+/*new Vue({
+	el: "#vm",
+	data: {
+		contador: 0
+	},
+	methods: {
+		sumarUno: function(){
+			this.contador += 1;
+		},
+		restarUno: function(){
+			this.contador -= 1;
+		}
+	}
+	
+})*/
+//FIN EJEMPLO EVENTOS///////
+//EJEMPLO DE EVENTO (USANDO EL OBJETO EVENT)////
+// MODIFICADOR DE EVENTOS v-on:click.once
+new Vue({
+	el: "#vm",
+	data: {
+		x: 0,
+		y: 0,
+		contador: 0
+	},
+	methods:{
+		mostrarUbicacion: function(evento){
+			this.x = evento.clientX;
+			this.y = evento.clientY;
+		},
+		reiniciarUbicacion: function(){
+			this.x = 0;
+			this.y = 0;
+		},
+		sumar: function(cantidad){
+			this.contador += cantidad;
+		}
+	}
+
 })
+//FIN EJEMPLO DE EVENTO (USANDO EL OBJETO EVENT)////
+
+
+
+
+
+
+
+
+
+
