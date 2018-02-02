@@ -1,0 +1,10 @@
+.btn-xs{
+	width: 30px;
+    height: 30px;
+    padding: 0;
+    margin-right: 6px;
+}
+.terminada{
+	color: gray;
+	text-decoration: line-through !important;
+}
