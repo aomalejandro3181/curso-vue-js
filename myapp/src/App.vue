@@ -1,10 +1,9 @@
 <template>
   <div id="app" class="container">
     <div class="jumbotron">
-      <titulo v-bind:titulo="titulo"></titulo>
-      {{ numTareas }}
+      <titulo v-bind:titulo="titulo" :numTareas="numTareas"></titulo>
       <nueva-tarea v-bind:tareas="tareas" 
-                   v-on:incrementarCont="numTareas += $event"></nueva-tarea>
+                   :actualizarContador="actualizarContador"></nueva-tarea>
       <lista-de-tareas v-bind:tareas="tareas"></lista-de-tareas>
     </div>
   </div>
@@ -38,6 +37,11 @@ export default {
           terminada: false
         }
       ]
+    }
+  },
+  methods:{
+    actualizarContador(){
+      this.numTareas++;
     }
   }
 }

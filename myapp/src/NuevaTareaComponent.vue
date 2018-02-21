@@ -10,13 +10,15 @@
 	</div>
 </template>
 <script>
+	import { bus } from './main.js'
 	export default {
 		data(){ //Es igual a: data: function(){}
 			return {
-				nuevaTarea: ''
+				nuevaTarea: '',
+				numTareas : 0
 			}
 		},
-		props: ['tareas'],// para traernos el arreglo tareas de app.vue
+		props: ['tareas','actualizarContador'],// para traernos el arreglo tareas de app.vue
 		methods: {
 			agregarTarea: function(){
 				var texto = this.nuevaTarea.trim();
@@ -25,11 +27,13 @@
 						texto: texto,
 						terminada: false
 					})
-
-					this.$emit('incrementarCont', 1);
+					//this.actualizarContador();
+					bus.actualizarContador(this.tareas.length);
 				}
-				this.nuevaTarea = '';
-			},
+			}
+		},
+		created(){
+			bus.actualizarContador(this.tareas.length);
 		}
 	}
 </script>

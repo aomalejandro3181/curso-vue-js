@@ -1,6 +1,7 @@
 <template>
 	<ul class="list-group">
-		<li class="list-group-item" v-for="(tarea, index) in tareas" v-bind:class="{terminada: tarea.terminada}">
+		<li class="list-group-item" v-for="( tarea, index ) in tareas" :key="index"
+									v-bind:class="{ terminada: tarea.terminada }">
 			{{ tarea.texto }}
 			<span class="float-right">
 				<button type="button" class="btn btn-danger btn-xs"
@@ -13,11 +14,13 @@
 	</ul>
 </template>
 <script>
+	import { bus } from './main.js'
 	export default{
 		props: ['tareas'],
 		methods:{
 			eliminarTarea: function(index){
 				this.tareas.splice(index, 1);
+				bus.actualizarContador(this.tareas.length);
 			}
 		}
 	}
